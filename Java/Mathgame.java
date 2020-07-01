@@ -7,8 +7,8 @@ public class Mathgame {
     public static String newline = System.getProperty("line.separator");
 
     // Defaults
-    public static String title = "Mathgame (Java, Version 1.2)";
-    public static String copyright = "(C) 2016 Tatu Arvela. All rights reserved.";
+    public static String title = "Mathgame (Java, Version 1.2.1)";
+    public static String copyright = "(C) 2020 Tatu Arvela. All rights reserved.";
     public static String header = " " + title + newline
             + " " + copyright + newline
             + "-------------------------------------------------------------------------------" + newline;
@@ -29,10 +29,13 @@ public class Mathgame {
     // Clear screen
     public static void cls() {
         try {
-            if (System.getProperty("os.name").contains("Windows"))
+            if (System.getProperty("os.name").contains("Windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            else
-                Runtime.getRuntime().exec("cls");
+            }
+            else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
         } catch (final Exception e) {
         }
     }
