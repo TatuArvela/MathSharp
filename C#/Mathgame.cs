@@ -22,14 +22,6 @@ namespace Mathgame {
         public static string op;
         public static decimal answer;
 
-        // Set console settings
-        // public static void consoleSettings() {
-        //     Console.Title = title;
-        //     Console.ForegroundColor = ConsoleColor.Black;
-        //     Console.BackgroundColor = ConsoleColor.White;
-        //     Console.WindowWidth = 80;
-        // }
-
         // Randomization
         public static void randomizeNumbers() {
             num01 = rnd.Next(rndmin, rndmax + 1);
@@ -151,7 +143,6 @@ namespace Mathgame {
         }
 
         public static void Main(string[] args) {
-            // consoleSettings();
             runGame();
         }
     }
